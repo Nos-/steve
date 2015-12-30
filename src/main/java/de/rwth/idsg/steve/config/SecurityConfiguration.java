@@ -1,7 +1,8 @@
 package de.rwth.idsg.steve.config;
 
-import de.rwth.idsg.steve.SteveConfiguration;
+import de.rwth.idsg.steve.SteveProdCondition;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,19 +10,22 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import static de.rwth.idsg.steve.SteveConfiguration.CONFIG;
+
 /**
  * @author Sevket Goekay <goekay@dbis.rwth-aachen.de>
  * @since 07.01.2015
  */
 @Configuration
 @EnableWebSecurity
+@Conditional(SteveProdCondition.class)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-            .withUser(SteveConfiguration.Auth.USERNAME)
-            .password(SteveConfiguration.Auth.PASSWORD)
+            .withUser(CONFIG.getAuth().getUserName())
+            .password(CONFIG.getAuth().getPassword())
             .roles("ADMIN");
     }
 
@@ -44,7 +48,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
             .formLogin()
                 .loginPage(prefix + "signin")
-                .defaultSuccessUrl(prefix + "home")
                 .permitAll()
                 .and()
             .logout()

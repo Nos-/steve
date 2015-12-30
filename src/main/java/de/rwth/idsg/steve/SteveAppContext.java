@@ -16,16 +16,20 @@ import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.DispatcherType;
+import javax.servlet.Filter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+
+import static de.rwth.idsg.steve.SteveConfiguration.CONFIG;
 
 /**
  * @author Sevket Goekay <goekay@dbis.rwth-aachen.de>
@@ -51,7 +55,7 @@ public class SteveAppContext {
     }
 
     private Handler getWebApp() throws IOException {
-        if (SteveConfiguration.Jetty.GZIP_ENABLED) {
+        if (CONFIG.getJetty().isGzipEnabled()) {
             return enableGzip(initWebApp());
         } else {
             return initWebApp();
@@ -71,7 +75,7 @@ public class SteveAppContext {
 
     private WebAppContext initWebApp() throws IOException {
         WebAppContext ctx = new WebAppContext();
-        ctx.setContextPath(SteveConfiguration.CONTEXT_PATH);
+        ctx.setContextPath(CONFIG.getContextPath());
         ctx.setResourceBase(new ClassPathResource("webapp").getURI().toString());
 
         // Disable directory listings if no index.html is found.
@@ -81,18 +85,26 @@ public class SteveAppContext {
         ServletHolder cxf = new ServletHolder("cxf", new CXFServlet());
 
         ctx.addEventListener(new ContextLoaderListener(springContext));
-        ctx.addServlet(web, SteveConfiguration.SPRING_MAPPING);
-        ctx.addServlet(cxf, SteveConfiguration.CXF_MAPPING);
+        ctx.addServlet(web, CONFIG.getSpringMapping());
+        ctx.addServlet(cxf, CONFIG.getCxfMapping());
 
-        // Register Spring's filter chain for security. The name is not arbitrary, but is as expected by Spring.
-        ctx.addFilter(
-                new FilterHolder(new DelegatingFilterProxy("springSecurityFilterChain")),
-                SteveConfiguration.SPRING_MANAGER_MAPPING,
-                EnumSet.allOf(DispatcherType.class)
-        );
+        if (CONFIG.getProfile().isProd()) {
+            addSecurityFilter(ctx);
+        }
 
         initJSP(ctx);
         return ctx;
+    }
+
+    private void addSecurityFilter(WebAppContext ctx) {
+        // The bean name is not arbitrary, but is as expected by Spring
+        Filter f = new DelegatingFilterProxy(AbstractSecurityWebApplicationInitializer.DEFAULT_FILTER_NAME);
+
+        ctx.addFilter(
+                new FilterHolder(f),
+                CONFIG.getSpringManagerMapping(),
+                EnumSet.allOf(DispatcherType.class)
+        );
     }
 
     private Handler getRedirectHandler() {
