@@ -1,0 +1,2 @@
+src/main/resources/config/dev/main.properties
+src/main/resources/config/prod/main.properties
