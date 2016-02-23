@@ -1,5 +1,6 @@
 package de.rwth.idsg.steve.repository.impl;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import de.rwth.idsg.steve.SteveException;
 import de.rwth.idsg.steve.repository.OcppTagRepository;
 import de.rwth.idsg.steve.repository.dto.OcppTag.Overview;
@@ -10,6 +11,7 @@ import jooq.steve.db.tables.OcppTag;
 import jooq.steve.db.tables.records.OcppTagRecord;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
+import org.jooq.BatchBindStep;
 import org.jooq.DSLContext;
 import org.jooq.JoinType;
 import org.jooq.Record7;
@@ -151,23 +153,41 @@ public class OcppTagRepositoryImpl implements OcppTagRepository {
     }
 
     @Override
-    public void addOcppTag(OcppTagForm u) {
-        try {
-            int count = ctx.insertInto(OCPP_TAG)
-                           .set(OCPP_TAG.ID_TAG, u.getIdTag())
-                           .set(OCPP_TAG.PARENT_ID_TAG, u.getParentIdTag())
-                           .set(OCPP_TAG.EXPIRY_DATE, toDateTime(u.getExpiration()))
-                           .set(OCPP_TAG.NOTE, u.getNote())
-                           .set(OCPP_TAG.BLOCKED, false)
-                           .set(OCPP_TAG.IN_TRANSACTION, false)
-                           .onDuplicateKeyIgnore() // Important detail
-                           .execute();
+    public void addOcppTagList(List<String> idTagList) {
+        BatchBindStep batch = ctx.batch(
+                ctx.insertInto(OCPP_TAG)
+                   .set(OCPP_TAG.ID_TAG, "")
+                   .set(OCPP_TAG.BLOCKED, false)
+                   .set(OCPP_TAG.IN_TRANSACTION, false)
+        );
 
-            if (count == 0) {
-                throw new SteveException("A user with idTag '%s' already exists.", u.getIdTag());
-            }
+        for (String s : idTagList) {
+            batch.bind(s, false, false);
+        }
+
+        batch.execute();
+    }
+
+    @Override
+    public int addOcppTag(OcppTagForm u) {
+        try {
+            return ctx.insertInto(OCPP_TAG)
+                      .set(OCPP_TAG.ID_TAG, u.getIdTag())
+                      .set(OCPP_TAG.PARENT_ID_TAG, u.getParentIdTag())
+                      .set(OCPP_TAG.EXPIRY_DATE, toDateTime(u.getExpiration()))
+                      .set(OCPP_TAG.NOTE, u.getNote())
+                      .set(OCPP_TAG.BLOCKED, false)
+                      .set(OCPP_TAG.IN_TRANSACTION, false)
+                      .returning(OCPP_TAG.OCPP_TAG_PK)
+                      .fetchOne()
+                      .getOcppTagPk();
+
         } catch (DataAccessException e) {
-            throw new SteveException("Execution of addOcppTag for idTag '%s' FAILED.", u.getIdTag(), e);
+            if (e.getCause() instanceof MySQLIntegrityConstraintViolationException) {
+                throw new SteveException("A user with idTag '%s' already exists.", u.getIdTag());
+            } else {
+                throw new SteveException("Execution of addOcppTag for idTag '%s' FAILED.", u.getIdTag(), e);
+            }
         }
     }
 

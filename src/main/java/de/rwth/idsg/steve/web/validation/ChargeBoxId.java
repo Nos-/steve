@@ -11,14 +11,14 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * @author Sevket Goekay <goekay@dbis.rwth-aachen.de>
- * @since 15.08.2014
+ * @since 21.01.2016
  */
 @Target({FIELD, METHOD})
 @Retention(RUNTIME)
-@Constraint(validatedBy = {IdTagValidator.class, IdTagListValidator.class})
-public @interface IdTag {
+@Constraint(validatedBy = {ChargeBoxIdValidator.class, ChargeBoxIdListValidator.class})
+public @interface ChargeBoxId {
 
-    String message() default "ID Tag can only contain upper or lower case letters, numbers and dot, dash, underscore symbols";
+    String message() default "ChargeBox ID cannot contain any whitespace";
 
     // Required by validation runtime
     Class<?>[] groups() default {};

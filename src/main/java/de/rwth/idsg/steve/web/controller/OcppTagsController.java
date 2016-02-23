@@ -2,6 +2,7 @@ package de.rwth.idsg.steve.web.controller;
 
 import de.rwth.idsg.steve.repository.OcppTagRepository;
 import de.rwth.idsg.steve.utils.ControllerHelper;
+import de.rwth.idsg.steve.web.dto.OcppTagBatchInsertForm;
 import de.rwth.idsg.steve.web.dto.OcppTagForm;
 import de.rwth.idsg.steve.web.dto.OcppTagQueryForm;
 import jooq.steve.db.tables.records.OcppTagRecord;
@@ -25,21 +26,23 @@ import javax.validation.Valid;
 @RequestMapping(value = "/manager/ocppTags")
 public class OcppTagsController {
 
-    @Autowired private OcppTagRepository ocppTagRepository;
+    @Autowired protected OcppTagRepository ocppTagRepository;
 
-    private static final String PARAMS = "params";
+    protected static final String PARAMS = "params";
 
     // -------------------------------------------------------------------------
     // Paths
     // -------------------------------------------------------------------------
 
-    private static final String QUERY_PATH = "/query";
+    protected static final String QUERY_PATH = "/query";
 
-    private static final String DETAILS_PATH = "/details/{ocppTagPk}";
-    private static final String DELETE_PATH = "/delete/{ocppTagPk}";
-    private static final String UPDATE_PATH = "/update";
-    private static final String ADD_PATH = "/add";
+    protected static final String DETAILS_PATH = "/details/{ocppTagPk}";
+    protected static final String DELETE_PATH = "/delete/{ocppTagPk}";
+    protected static final String UPDATE_PATH = "/update";
+    protected static final String ADD_PATH = "/add";
 
+    protected static final String ADD_SINGLE_PATH = "/add/single";
+    protected static final String ADD_BATCH_PATH = "/add/batch";
 
     // -------------------------------------------------------------------------
     // HTTP methods
@@ -90,18 +93,33 @@ public class OcppTagsController {
     public String addGet(Model model) {
         setTags(model);
         model.addAttribute("ocppTagForm", new OcppTagForm());
+        model.addAttribute("batchInsertForm", new OcppTagBatchInsertForm());
         return "data-man/ocppTagAdd";
     }
 
-    @RequestMapping(params = "add", value = ADD_PATH, method = RequestMethod.POST)
-    public String addPost(@Valid @ModelAttribute("ocppTagForm") OcppTagForm ocppTagForm,
-                          BindingResult result, Model model) {
+    @RequestMapping(params = "add", value = ADD_SINGLE_PATH, method = RequestMethod.POST)
+    public String addSinglePost(@Valid @ModelAttribute("ocppTagForm") OcppTagForm ocppTagForm,
+                                BindingResult result, Model model) {
         if (result.hasErrors()) {
             setTags(model);
+            model.addAttribute("batchInsertForm", new OcppTagBatchInsertForm());
             return "data-man/ocppTagAdd";
         }
 
         ocppTagRepository.addOcppTag(ocppTagForm);
+        return toOverview();
+    }
+
+    @RequestMapping(value = ADD_BATCH_PATH, method = RequestMethod.POST)
+    public String addBatchPost(@Valid @ModelAttribute("batchInsertForm") OcppTagBatchInsertForm form,
+                               BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            setTags(model);
+            model.addAttribute("ocppTagForm", new OcppTagForm());
+            return "data-man/ocppTagAdd";
+        }
+
+        ocppTagRepository.addOcppTagList(form.getIdList());
         return toOverview();
     }
 
@@ -130,7 +148,7 @@ public class OcppTagsController {
         model.addAttribute("ocppTagList", ocppTagRepository.getOverview(params));
     }
 
-    private void setTags(Model model) {
+    protected void setTags(Model model) {
         model.addAttribute("idTagList", ControllerHelper.idTagEnhancer(ocppTagRepository.getIdTags()));
     }
 
@@ -138,7 +156,7 @@ public class OcppTagsController {
     // Back to Overview
     // -------------------------------------------------------------------------
 
-    @RequestMapping(params = "backToOverview", value = ADD_PATH, method = RequestMethod.POST)
+    @RequestMapping(params = "backToOverview", value = ADD_SINGLE_PATH, method = RequestMethod.POST)
     public String addBackToOverview() {
         return toOverview();
     }
@@ -148,7 +166,7 @@ public class OcppTagsController {
         return toOverview();
     }
 
-    private String toOverview() {
+    protected String toOverview() {
         return "redirect:/manager/ocppTags";
     }
 }

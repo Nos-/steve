@@ -5,19 +5,16 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
 /**
- * Allowed characters are:
- * Upper or lower case letters, numbers and dot, dash, underscore symbols.
- *
  * @author Sevket Goekay <goekay@dbis.rwth-aachen.de>
- * @since 15.08.2014
+ * @since 21.01.2016
  */
-public class IdTagValidator implements ConstraintValidator<IdTag, String> {
+public class ChargeBoxIdValidator implements ConstraintValidator<ChargeBoxId, String> {
 
-    private static final String IDTAG_PATTERN = "^[a-zA-Z0-9._-]{1,20}$";
-    private static final Pattern PATTERN = Pattern.compile(IDTAG_PATTERN);
+    private static final String REGEX = "\\S+";
+    private static final Pattern PATTERN = Pattern.compile(REGEX);
 
     @Override
-    public void initialize(IdTag idTag) {
+    public void initialize(ChargeBoxId idTag) {
         // No-op
     }
 

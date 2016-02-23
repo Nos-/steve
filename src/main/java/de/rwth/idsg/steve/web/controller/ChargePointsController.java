@@ -3,6 +3,7 @@ package de.rwth.idsg.steve.web.controller;
 import de.rwth.idsg.steve.repository.ChargePointRepository;
 import de.rwth.idsg.steve.repository.dto.ChargePoint;
 import de.rwth.idsg.steve.utils.ControllerHelper;
+import de.rwth.idsg.steve.web.dto.ChargePointBatchInsertForm;
 import de.rwth.idsg.steve.web.dto.ChargePointForm;
 import de.rwth.idsg.steve.web.dto.ChargePointQueryForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,20 +26,24 @@ import javax.validation.Valid;
 @RequestMapping(value = "/manager/chargepoints")
 public class ChargePointsController {
 
-    @Autowired private ChargePointRepository chargePointRepository;
+    @Autowired protected ChargePointRepository chargePointRepository;
 
-    private static final String PARAMS = "params";
+    protected static final String PARAMS = "params";
 
     // -------------------------------------------------------------------------
     // Paths
     // -------------------------------------------------------------------------
 
-    private static final String QUERY_PATH = "/query";
+    protected static final String QUERY_PATH = "/query";
 
-    private static final String DETAILS_PATH = "/details/{chargeBoxPk}";
-    private static final String DELETE_PATH = "/delete/{chargeBoxPk}";
-    private static final String UPDATE_PATH = "/update";
-    private static final String ADD_PATH = "/add";
+    protected static final String DETAILS_PATH = "/details/{chargeBoxPk}";
+    protected static final String DELETE_PATH = "/delete/{chargeBoxPk}";
+    protected static final String UPDATE_PATH = "/update";
+    protected static final String ADD_PATH = "/add";
+
+    protected static final String ADD_SINGLE_PATH = "/add/single";
+    protected static final String ADD_BATCH_PATH = "/add/batch";
+
 
     // -------------------------------------------------------------------------
     // HTTP methods
@@ -85,15 +90,17 @@ public class ChargePointsController {
     @RequestMapping(value = ADD_PATH, method = RequestMethod.GET)
     public String addGet(Model model) {
         model.addAttribute("chargePointForm", new ChargePointForm());
+        model.addAttribute("batchChargePointForm", new ChargePointBatchInsertForm());
         addCountryCodes(model);
         return "data-man/chargepointAdd";
     }
 
-    @RequestMapping(params = "add", value = ADD_PATH, method = RequestMethod.POST)
-    public String addPost(@Valid @ModelAttribute("chargePointForm") ChargePointForm chargePointForm,
-                          Model model, BindingResult result) {
+    @RequestMapping(params = "add", value = ADD_SINGLE_PATH, method = RequestMethod.POST)
+    public String addSinglePost(@Valid @ModelAttribute("chargePointForm") ChargePointForm chargePointForm,
+                                BindingResult result, Model model) {
         if (result.hasErrors()) {
             addCountryCodes(model);
+            model.addAttribute("batchChargePointForm", new ChargePointBatchInsertForm());
             return "data-man/chargepointAdd";
         }
 
@@ -101,9 +108,22 @@ public class ChargePointsController {
         return toOverview();
     }
 
+    @RequestMapping(value = ADD_BATCH_PATH, method = RequestMethod.POST)
+    public String addBatchPost(@Valid @ModelAttribute("batchChargePointForm") ChargePointBatchInsertForm form,
+                               BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            addCountryCodes(model);
+            model.addAttribute("chargePointForm", new ChargePointForm());
+            return "data-man/chargepointAdd";
+        }
+
+        chargePointRepository.addChargePoint(form.getIdList());
+        return toOverview();
+    }
+
     @RequestMapping(params = "update", value = UPDATE_PATH, method = RequestMethod.POST)
     public String update(@Valid @ModelAttribute("chargePointForm") ChargePointForm chargePointForm,
-                         Model model, BindingResult result) {
+                         BindingResult result, Model model) {
         if (result.hasErrors()) {
             addCountryCodes(model);
             return "data-man/chargepointDetails";
@@ -119,7 +139,7 @@ public class ChargePointsController {
         return toOverview();
     }
 
-    private void addCountryCodes(Model model) {
+    protected void addCountryCodes(Model model) {
         model.addAttribute("countryCodes", ControllerHelper.COUNTRY_DROPDOWN);
     }
 
@@ -127,7 +147,7 @@ public class ChargePointsController {
     // Back to Overview
     // -------------------------------------------------------------------------
 
-    @RequestMapping(params = "backToOverview", value = ADD_PATH, method = RequestMethod.POST)
+    @RequestMapping(params = "backToOverview", value = ADD_SINGLE_PATH, method = RequestMethod.POST)
     public String addBackToOverview() {
         return toOverview();
     }
@@ -137,7 +157,7 @@ public class ChargePointsController {
         return toOverview();
     }
 
-    private String toOverview() {
+    protected String toOverview() {
         return "redirect:/manager/chargepoints";
     }
 }
