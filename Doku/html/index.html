@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
 <title>SteVe: Hauptseite</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -28,7 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="managed-by-steve.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">SteVe
    &#160;<span id="projectnumber">2.0.4</span>
@@ -40,7 +40,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Erzeugt von Doxygen 1.8.6 -->
+<!-- Erzeugt von Doxygen 1.8.8 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 </script>
@@ -119,8 +119,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 </ul>
 <p>We have successfully tested SteVe with charge points manufactured by EBG and Mennekes. If your charge point also works well with SteVe, please let us know! We will update the list.</p>
 <h3>System Requirements</h3>
-<p>SteVe requires</p>
-<ul>
+<p>SteVe requires</p><ul>
 <li>JDK 8 (both Oracle JDK and OpenJDK are supported)</li>
 <li>Maven</li>
 <li>At least MySQL 5.6.4 (MariaDB 10.0 or later works as well) as database</li>
@@ -137,8 +136,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p class="startli">You can download and extract the SteVe releases using the following commands (replace X.X.X with the desired version number): ``` wget <a href="https://github.com/RWTH-i5-IDSG/steve/archive/steve-X.X.X.tar.gz">https://github.com/RWTH-i5-IDSG/steve/archive/steve-X.X.X.tar.gz</a> tar xzvf steve-X.X.X.tar.gz cd steve-X.X.X ```</p>
 </li>
 <li><p class="startli">Configure SteVe <b>before</b> building:</p>
-<p class="startli">The basic configuration is defined in <a href="src/main/resources/config/prod/main.properties">main.properties</a>:</p>
-<ul>
+<p class="startli">The basic configuration is defined in <a href="src/main/resources/config/prod/main.properties">main.properties</a>:</p><ul>
 <li>You <em>must</em> change <a href="src/main/resources/config/prod/main.properties#L3-L7">database configuration</a></li>
 <li>You <em>must</em> change <a href="src/main/resources/config/prod/main.properties#L16">the host</a> to the correct IP address of your server</li>
 <li>You <em>must</em> change <a href="src/main/resources/config/prod/main.properties#L11-L12">web interface credentials</a></li>
@@ -148,20 +146,17 @@ $(document).ready(function(){initNavTree('index.html','');});
 </li>
 <li><p class="startli">Build SteVe:</p>
 <p class="startli">To compile SteVe simply use Maven. A runnable <code>jar</code> file containing the application and configuration will be created in the subdirectory <code>steve/target</code>.</p>
-<p class="startli">``` </p>
-<h1>mvn package</h1>
+<p class="startli">``` </p><h1>mvn package</h1>
 <p class="startli">```</p>
 </li>
 <li><p class="startli">Run SteVe:</p>
 <p class="startli">To start the application run (please do not run SteVe as root):</p>
-<p class="startli">``` </p>
-<h1>java -jar target/steve-X.X.X.jar</h1>
+<p class="startli">``` </p><h1>java -jar target/steve-X.X.X.jar</h1>
 <p class="startli">```</p>
 </li>
 </ol>
 <h1>First Steps</h1>
-<p>After SteVe has successfully started, you can access the web interface using the configured credentials under: </p>
-<pre class="fragment">http://&lt;your-server-ip&gt;:&lt;port&gt;/steve/manager
+<p>After SteVe has successfully started, you can access the web interface using the configured credentials under: </p><pre class="fragment">http://&lt;your-server-ip&gt;:&lt;port&gt;/steve/manager
 </pre><p>The default port number is 8080.</p>
 <h3>Add a charge point</h3>
 <ol type="1">
@@ -194,9 +189,9 @@ $(document).ready(function(){initNavTree('index.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Erzeugt am Mit Dez 16 2015 12:01:18 für SteVe von
+    <li class="footer">Erzeugt am Die Feb 23 2016 22:48:34 für SteVe von
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
 </div>
 </body>

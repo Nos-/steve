@@ -1,4 +1,4 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_user_repository.html" title="de.rwth.idsg.steve.repository.\lUserRepository" alt="" coords="5,5,200,46"/>
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_user_repository_impl.html" title="de.rwth.idsg.steve.repository.impl.\lUserRepositoryImpl" alt="" coords="249,5,471,46"/>
+<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_helper_service.html" title="de.rwth.idsg.steve.service.\lChargePointHelperService" alt="" coords="5,5,184,47"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_helper_service_impl.html" title="de.rwth.idsg.steve.service.\lChargePointHelperServiceImpl" alt="" coords="232,5,433,47"/>
 </map>

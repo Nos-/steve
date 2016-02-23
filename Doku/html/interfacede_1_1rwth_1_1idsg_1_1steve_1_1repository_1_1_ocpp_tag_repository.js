@@ -1,6 +1,7 @@
 var interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository =
 [
-    [ "addOcppTag", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#a409d49bef677ef120adf82486ec2cff8", null ],
+    [ "addOcppTag", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#a52d4d4413c85b4d75cbab87002578d93", null ],
+    [ "addOcppTagList", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#a416a281fc1d106c5996e901f7528e013", null ],
     [ "deleteOcppTag", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#a1537f5848e9d9ee84d968da3857f1d91", null ],
     [ "getActiveIdTags", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#aeaebdc45f7845e91f98f469197f90f6a", null ],
     [ "getIdTags", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository.html#a7811481285aa81f25bd9bac4445ec0ab", null ],

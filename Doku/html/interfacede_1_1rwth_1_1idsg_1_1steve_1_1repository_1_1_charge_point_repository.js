@@ -1,6 +1,7 @@
 var interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository =
 [
-    [ "addChargePoint", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#ac74f3660f94697edd12eca4d3f2f5e6a", null ],
+    [ "addChargePoint", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#ad54534952ec931a42b250554ffca96a8", null ],
+    [ "addChargePoint", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#af4996560e9292ae2b55caaca98f24f26", null ],
     [ "deleteChargePoint", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#a54b07eb5e931393a639349cfa5302add", null ],
     [ "getChargeBoxIdPkPair", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#ac07b02af508e0e81d53c90802fca149f", null ],
     [ "getChargeBoxIds", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository.html#a0f9a9d616c82118e9292f1dd0bb8fd5e", null ],

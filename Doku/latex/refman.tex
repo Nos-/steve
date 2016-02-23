@@ -1,6 +1,7 @@
 \documentclass[twoside]{book}
 
 % Packages required by doxygen
+\usepackage{fixltx2e}
 \usepackage{calc}
 \usepackage{doxygen}
 \usepackage{graphicx}
@@ -8,7 +9,9 @@
 \usepackage{makeidx}
 \usepackage{multicol}
 \usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
 \usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
 \usepackage[table]{xcolor}
 
 % NLS support packages
@@ -30,6 +33,7 @@
   \fontseries{bc}\selectfont%
   \color{darkgray}%
 }
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
 
 % Page & text layout
 \usepackage{geometry}
@@ -70,8 +74,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Erzeugt am Mit Dez 16 2015 12\-:01\-:18 für Ste\-Ve von Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Erzeugt am Mit Dez 16 2015 12\-:01\-:18 für Ste\-Ve von Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Erzeugt am Die Feb 23 2016 22\+:48\+:34 für Ste\+Ve von Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Erzeugt am Die Feb 23 2016 22\+:48\+:34 für Ste\+Ve von Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -114,16 +118,20 @@
 \begin{document}
 
 % Titlepage & ToC
-\hypersetup{pageanchor=false}
+\hypersetup{pageanchor=false,
+             bookmarks=true,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
 \pagenumbering{roman}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}%
-{\Large Ste\-Ve \\[1ex]\large 2.\-0.\-4 }\\
+{\Large Ste\+Ve \\[1ex]\large 2.\+0.\+4 }\\
 \vspace*{1cm}
-{\large Erzeugt von Doxygen 1.8.6}\\
+{\large Erzeugt von Doxygen 1.8.8}\\
 \vspace*{0.5cm}
-{\small Mit Dez 16 2015 12:01:18}\\
+{\small Die Feb 23 2016 22:48:34}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
@@ -137,11 +145,11 @@
 \label{index}\hypertarget{index}{}\input{index}
 \chapter{Verzeichnis der Namensbereiche}
 \input{namespaces}
-\chapter{Hierarchie-\/\-Verzeichnis}
+\chapter{Hierarchie-\/\+Verzeichnis}
 \input{hierarchy}
-\chapter{Klassen-\/\-Verzeichnis}
+\chapter{Klassen-\/\+Verzeichnis}
 \input{annotated}
-\chapter{Datei-\/\-Verzeichnis}
+\chapter{Datei-\/\+Verzeichnis}
 \input{files}
 \chapter{Dokumentation der Namensbereiche}
 \input{namespacede}
@@ -173,8 +181,7 @@
 \input{namespacede_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15}
 \input{namespacede_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1task}
 \input{namespacede_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation}
-\chapter{Klassen-\/\-Dokumentation}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_about_settings_controller}
+\chapter{Klassen-\/\+Dokumentation}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_abstract_call_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_abstract_charge_point_service_invoker}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1_abstract_ocpp_response_handler_3_01_t_01_4}
@@ -184,35 +191,34 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_address}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_address_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_address_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_ajax_call_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_always_last_strategy}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1_application}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1_application_profile}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1_application_starter}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1config_1_1_bean_configuration}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1_batch_insert_converter}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_ocpp_tag_query_form_1_1_boolean_type}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_cancel_reservation_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_cancel_reservation_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_central_system_service12___service}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_central_system_service12___soap_server}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_central_system_service15___service}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_central_system_service15___soap_server}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp12_1_1_change_availability_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_change_availability_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_change_availability_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_change_availability_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp12_1_1_change_configuration_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_change_configuration_params}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_change_configuration_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_change_configuration_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_change_configuration_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_charge_box_id_list_validator}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_charge_box_id_validator}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_charge_point}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_charge_point_batch_insert_form}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_charge_point_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_helper_service}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_helper_service_impl}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_charge_point_query_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_charge_point_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_charge_point_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_charge_points_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_charge_point_select}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1_charge_point_select_editor}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service12___client}
@@ -225,8 +231,8 @@
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_charge_point_service15___invoker}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_charge_point_service15___soap_invoker}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_charge_point_service15___ws_invoker}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_clear_cache_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_clear_cache_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_clear_cache_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_client_provider}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_communication_context}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp12_1_1_configuration_key_enum}
@@ -241,11 +247,11 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1utils_1_1_date_time_utils}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_db_version}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_deserializer}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_email_collection_validator}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_enum_mixin}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_error_code}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_error_factory}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1task_1_1_external_request_task}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_from_address_interceptor}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_future_response_context}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_future_response_context_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_future_response_context_store_impl}
@@ -254,12 +260,11 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_get_configuration_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_get_configuration_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_get_diagnostics_params}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_get_diagnostics_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_get_diagnostics_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_get_diagnostics_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_get_local_list_version_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1_global_controller_advice}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_home_controller}
-\input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_id_tag}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_id_tag_list_validator}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_id_tag_validator}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_incoming_pipeline}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_insert_connector_status_params}
@@ -268,21 +273,23 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1utils_1_1_joda_date_time_converter}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1_local_date_editor}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1_local_date_time_editor}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_log_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1utils_1_1_log_file_retriever}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_mail_service}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_mail_settings}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_mediator_in_interceptor}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_message_id_interceptor}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_message_type}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_meter_value15_deserializer}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_meter_value15_mixin}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_multiple_charge_point_select}
+\input{enumde_1_1rwth_1_1idsg_1_1steve_1_1_notification_feature}
+\input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service_impl}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_ocpp12_call_handler}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_ocpp12_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_ocpp12_jackson_module}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_ocpp12_type_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_ocpp12_web_socket_endpoint}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_ocpp15_call_handler}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_ocpp15_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_ocpp15_jackson_module}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_ocpp15_type_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_ocpp15_web_socket_endpoint}
@@ -299,11 +306,11 @@
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_server_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_ocpp_server_repository_impl}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_ocpp_tag}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_ocpp_tag_batch_insert_form}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_ocpp_tag_form}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_ocpp_tag_query_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_ocpp_tag_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_ocpp_tag_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_ocpp_tags_controller}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service_impl}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_ocpp_transport}
@@ -314,19 +321,16 @@
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_pipeline}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1utils_1_1_properties_file_loader}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_query_form}
-\input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_reservation_query_form_1_1_query_period_type}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_charge_point_query_form_1_1_query_period_type}
-\input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_transaction_query_form_1_1_query_period_type}
-\input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_transaction_query_form_1_1_query_type}
+\input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_reservation_query_form_1_1_query_period_type}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_remote_start_transaction_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_remote_start_transaction_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_remote_start_transaction_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_remote_stop_transaction_params}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_remote_stop_transaction_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_remote_stop_transaction_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_remote_stop_transaction_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1task_1_1_request_result}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1task_1_1_request_task}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_request_task_controller}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1task_1_1_request_task_origin}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_request_task_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_request_task_store_impl}
@@ -338,14 +342,12 @@
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_reservation_status}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_reserve_now_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_reserve_now_response_handler}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp12_1_1_reset_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_reset_params}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_reset_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp12_1_1_reset_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_reset_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_reset_response_handler}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_response_type}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_round_robin_strategy}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1config_1_1_security_configuration}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1config_1_1_security_initializer}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_sender}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1ocpp15_1_1_send_local_list_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_send_local_list_response_handler}
@@ -353,11 +355,9 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_session_context}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_session_context_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_session_context_store_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_settings}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_settings_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_settings_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_settings_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_sign_out_controller}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_single_charge_point_select}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_stage}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_statistics}
@@ -365,6 +365,7 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_configuration}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_dev_starter}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_exception}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_condition}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_starter}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1utils_1_1_string_utils}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_task_overview}
@@ -372,33 +373,30 @@
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_transaction_query_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_transaction_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_transaction_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_transactions_reservations_controller}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_type_store}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_unlock_connector_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_unlock_connector_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_unlock_connector_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_update_chargebox_params}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1common_1_1_update_firmware_params}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_update_firmware_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp15_1_1_update_firmware_response_handler}
+\input{classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1ocpp12_1_1_update_firmware_response_handler}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1dto_1_1_user}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_user_form}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_user_query_form}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1_user_repository}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1repository_1_1impl_1_1_user_repository_impl}
-\input{classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1controller_1_1_users_controller}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_user_sex}
 \input{classde_1_1rwth_1_1idsg_1_1steve_1_1config_1_1_web_socket_configuration}
 \input{interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_ws_session_select_strategy}
 \input{enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_ws_session_select_strategy_enum}
-\chapter{Datei-\/\-Dokumentation}
+\chapter{Datei-\/\+Dokumentation}
 \input{_application_8java}
 \input{_application_profile_8java}
 \input{_application_starter_8java}
 \input{_bean_configuration_8java}
 \input{_ocpp_configuration_8java}
 \input{_security_configuration_8java}
-\input{_security_initializer_8java}
 \input{_web_socket_configuration_8java}
 \input{_abstract_ocpp_response_handler_8java}
 \input{ocpp12_2_change_availability_response_handler_8java}
@@ -428,6 +426,7 @@
 \input{_ocpp_callback_8java}
 \input{_ocpp_response_handler_8java}
 \input{_jetty_server_8java}
+\input{_notification_feature_8java}
 \input{_charge_point_service12___invoker_8java}
 \input{_charge_point_service15___invoker_8java}
 \input{_ocpp_protocol_8java}
@@ -498,9 +497,9 @@
 \input{_db_version_8java}
 \input{_insert_connector_status_params_8java}
 \input{_insert_transaction_params_8java}
+\input{_mail_settings_8java}
 \input{_ocpp_tag_8java}
 \input{_reservation_8java}
-\input{_settings_8java}
 \input{_task_overview_8java}
 \input{_transaction_8java}
 \input{_update_chargebox_params_8java}
@@ -532,12 +531,16 @@
 \input{_charge_point_service12___dispatcher_8java}
 \input{_charge_point_service15___client_8java}
 \input{_charge_point_service15___dispatcher_8java}
+\input{_mail_service_8java}
+\input{_notification_service_8java}
+\input{_notification_service_impl_8java}
 \input{_ocpp_tag_service_8java}
 \input{_ocpp_tag_service_impl_8java}
 \input{_steve_app_context_8java}
 \input{_steve_configuration_8java}
 \input{_steve_dev_starter_8java}
 \input{_steve_exception_8java}
+\input{_steve_prod_condition_8java}
 \input{_steve_prod_starter_8java}
 \input{_controller_helper_8java}
 \input{_custom_d_s_l_8java}
@@ -548,6 +551,7 @@
 \input{_log_file_retriever_8java}
 \input{_properties_file_loader_8java}
 \input{_string_utils_8java}
+\input{_batch_insert_converter_8java}
 \input{_charge_point_select_editor_8java}
 \input{_about_settings_controller_8java}
 \input{_ajax_call_controller_8java}
@@ -562,6 +566,7 @@
 \input{_transactions_reservations_controller_8java}
 \input{_users_controller_8java}
 \input{_address_8java}
+\input{_charge_point_batch_insert_form_8java}
 \input{_charge_point_form_8java}
 \input{_charge_point_query_form_8java}
 \input{_get_diagnostics_params_8java}
@@ -585,6 +590,7 @@
 \input{_reserve_now_params_8java}
 \input{_send_local_list_params_8java}
 \input{_ocpp_json_status_8java}
+\input{_ocpp_tag_batch_insert_form_8java}
 \input{_ocpp_tag_form_8java}
 \input{_ocpp_tag_query_form_8java}
 \input{_query_form_8java}
@@ -602,7 +608,13 @@
 \input{_global_controller_advice_8java}
 \input{_local_date_editor_8java}
 \input{_local_date_time_editor_8java}
+\input{_charge_box_id_8java}
+\input{_charge_box_id_list_validator_8java}
+\input{_charge_box_id_validator_8java}
+\input{_email_collection_8java}
+\input{_email_collection_validator_8java}
 \input{_id_tag_8java}
+\input{_id_tag_list_validator_8java}
 \input{_id_tag_validator_8java}
 \input{jquery-2_80_83_8min_8js}
 \input{jquery-ui-timepicker-addon_8min_8js}

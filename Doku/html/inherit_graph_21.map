@@ -1,5 +1,3 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_from_address_interceptor.html" title="de.rwth.idsg.steve.ocpp.soap.\lFromAddressInterceptor" alt="" coords="224,5,421,46"/>
-<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_mediator_in_interceptor.html" title="de.rwth.idsg.steve.ocpp.soap.\lMediatorInInterceptor" alt="" coords="224,70,421,111"/>
-<area shape="rect" id="node4" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_message_id_interceptor.html" title="de.rwth.idsg.steve.ocpp.soap.\lMessageIdInterceptor" alt="" coords="224,135,421,177"/>
+<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_enum_mixin.html" title="de.rwth.idsg.steve.ocpp.ws.custom.\lEnumMixin" alt="" coords="5,5,239,47"/>
 </map>

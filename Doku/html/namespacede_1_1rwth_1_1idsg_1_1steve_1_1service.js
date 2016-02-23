@@ -8,6 +8,9 @@ var namespacede_1_1rwth_1_1idsg_1_1steve_1_1service =
     [ "ChargePointService12_Dispatcher", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service12___dispatcher.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service12___dispatcher" ],
     [ "ChargePointService15_Client", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service15___client.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service15___client" ],
     [ "ChargePointService15_Dispatcher", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service15___dispatcher.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service15___dispatcher" ],
+    [ "MailService", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_mail_service.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_mail_service" ],
+    [ "NotificationService", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service.html", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service" ],
+    [ "NotificationServiceImpl", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service_impl.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_notification_service_impl" ],
     [ "OcppTagService", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service.html", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service" ],
     [ "OcppTagServiceImpl", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service_impl.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_ocpp_tag_service_impl" ]
 ];

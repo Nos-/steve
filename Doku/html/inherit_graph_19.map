@@ -1,4 +1,5 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_central_system_service12___soap_server.html" title="de.rwth.idsg.steve.ocpp.soap.\lCentralSystemService12_SoapServer" alt="" coords="208,5,451,46"/>
-<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_central_system_service15___soap_server.html" title="de.rwth.idsg.steve.ocpp.soap.\lCentralSystemService15_SoapServer" alt="" coords="208,70,451,111"/>
+<area shape="rect" id="node1" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_abstract_charge_point_service_invoker.html" title="de.rwth.idsg.steve.ocpp.ws.\lAbstractChargePointServiceInvoker" alt="" coords="5,39,236,80"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_charge_point_service12___ws_invoker.html" title="de.rwth.idsg.steve.ocpp.ws.ocpp12.\lChargePointService12_WsInvoker" alt="" coords="284,5,516,47"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_charge_point_service15___ws_invoker.html" title="de.rwth.idsg.steve.ocpp.ws.ocpp15.\lChargePointService15_WsInvoker" alt="" coords="284,71,516,112"/>
 </map>

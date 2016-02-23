@@ -1,0 +1,4 @@
+<map id="de.rwth.idsg.steve.ocpp.OcppProtocol.fromCompositeValue" name="de.rwth.idsg.steve.ocpp.OcppProtocol.fromCompositeValue">
+<area shape="rect" id="node2" href="$enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_ocpp_version.html#aed69dc5ad96e8a2c013a2f84b99883de" title="de.rwth.idsg.steve.ocpp.\lOcppVersion.fromValue" alt="" coords="283,5,448,47"/>
+<area shape="rect" id="node3" href="$enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_ocpp_transport.html#a64ec586d12d40966424ce811f697b852" title="de.rwth.idsg.steve.ocpp.\lOcppTransport.fromValue" alt="" coords="280,71,451,112"/>
+</map>

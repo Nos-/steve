@@ -1,3 +1,4 @@
 <map id="de.rwth.idsg.steve.ocpp.ws.data.OcppJsonError.isSetDescription" name="de.rwth.idsg.steve.ocpp.ws.data.OcppJsonError.isSetDescription">
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_error.html#ae2cce460f6daf6b5ed6d4fb2ae44eab3" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonError.toString" alt="" coords="270,5,485,46"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_error.html#ae2cce460f6daf6b5ed6d4fb2ae44eab3" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonError.toString" alt="" coords="268,13,483,54"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1handler_1_1_abstract_ocpp_response_handler_3_01_t_01_4.html#ace2a08be261a858fb0ee9a29dac0d421" title="de.rwth.idsg.steve.handler.\lAbstractOcppResponseHandler\l\&lt; T \&gt;.handleError" alt="" coords="531,5,737,61"/>
 </map>

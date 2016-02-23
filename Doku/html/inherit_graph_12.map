@@ -1,5 +1,3 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_charge_point_service12___invoker.html" title="de.rwth.idsg.steve.ocpp.\lChargePointService12_Invoker" alt="" coords="5,38,208,79"/>
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_charge_point_service12___soap_invoker.html" title="de.rwth.idsg.steve.ocpp.soap.\lChargePointService12_SoapInvoker" alt="" coords="256,5,488,46"/>
-<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1service_1_1_charge_point_service12___dispatcher.html" title="de.rwth.idsg.steve.service.\lChargePointService12_Dispatcher" alt="" coords="261,70,483,111"/>
+<area shape="rect" id="node1" href="$enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1_ocpp_protocol.html" title="de.rwth.idsg.steve.ocpp.\lOcppProtocol" alt="" coords="5,5,171,47"/>
 </map>

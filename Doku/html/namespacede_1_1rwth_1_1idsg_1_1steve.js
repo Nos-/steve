@@ -11,9 +11,11 @@ var namespacede_1_1rwth_1_1idsg_1_1steve =
     [ "ApplicationProfile", "enumde_1_1rwth_1_1idsg_1_1steve_1_1_application_profile.html", "enumde_1_1rwth_1_1idsg_1_1steve_1_1_application_profile" ],
     [ "ApplicationStarter", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1_application_starter.html", "interfacede_1_1rwth_1_1idsg_1_1steve_1_1_application_starter" ],
     [ "JettyServer", "classde_1_1rwth_1_1idsg_1_1steve_1_1_jetty_server.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_jetty_server" ],
+    [ "NotificationFeature", "enumde_1_1rwth_1_1idsg_1_1steve_1_1_notification_feature.html", "enumde_1_1rwth_1_1idsg_1_1steve_1_1_notification_feature" ],
     [ "SteveAppContext", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_app_context.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_app_context" ],
     [ "SteveConfiguration", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_configuration.html", null ],
     [ "SteveDevStarter", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_dev_starter.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_dev_starter" ],
     [ "SteveException", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_exception.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_exception" ],
+    [ "SteveProdCondition", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_condition.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_condition" ],
     [ "SteveProdStarter", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_starter.html", "classde_1_1rwth_1_1idsg_1_1steve_1_1_steve_prod_starter" ]
 ];

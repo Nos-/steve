@@ -1,3 +1,4 @@
 <map id="de.rwth.idsg.steve.ocpp.ws.pipeline.AbstractCallHandler.process" name="de.rwth.idsg.steve.ocpp.ws.pipeline.AbstractCallHandler.process">
-<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_abstract_call_handler.html#a577a7437bc0362a527fe5dc54956c51b" title="de.rwth.idsg.steve.ocpp.ws.pipeline.\lAbstractCallHandler.dispatch" alt="" coords="288,5,523,46"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1pipeline_1_1_abstract_call_handler.html#a1d20349c70d76c56b565178201b599ae" title="de.rwth.idsg.steve.ocpp.ws.pipeline.\lAbstractCallHandler.dispatch" alt="" coords="289,5,523,47"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_error_factory.html#aa9a4554e30593e6825c4a301e5f2badc" title="de.rwth.idsg.steve.ocpp.ws.\lErrorFactory.payloadProcessingError" alt="" coords="288,71,524,112"/>
 </map>

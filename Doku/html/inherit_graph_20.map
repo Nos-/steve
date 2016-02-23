@@ -1,3 +1,5 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1soap_1_1_client_provider.html" title="de.rwth.idsg.steve.ocpp.soap.\lClientProvider" alt="" coords="5,5,203,46"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1_abstract_web_socket_endpoint.html" title="de.rwth.idsg.steve.ocpp.ws.\lAbstractWebSocketEndpoint" alt="" coords="188,39,379,80"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp12_1_1_ocpp12_web_socket_endpoint.html" title="de.rwth.idsg.steve.ocpp.ws.ocpp12.\lOcpp12WebSocketEndpoint" alt="" coords="427,5,659,47"/>
+<area shape="rect" id="node4" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1ocpp15_1_1_ocpp15_web_socket_endpoint.html" title="de.rwth.idsg.steve.ocpp.ws.ocpp15.\lOcpp15WebSocketEndpoint" alt="" coords="427,71,659,112"/>
 </map>

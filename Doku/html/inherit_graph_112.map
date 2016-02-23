@@ -1,3 +1,7 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$enumde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1dto_1_1_reservation_query_form_1_1_query_period_type.html" title="de.rwth.idsg.steve.web.dto.\lReservationQueryForm.QueryPeriodType" alt="" coords="6,5,269,46"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_charge_box_id_list_validator.html" title="de.rwth.idsg.steve.web.validation.\lChargeBoxIdListValidator" alt="" coords="187,5,407,47"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_charge_box_id_validator.html" title="de.rwth.idsg.steve.web.validation.\lChargeBoxIdValidator" alt="" coords="187,71,407,112"/>
+<area shape="rect" id="node4" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_email_collection_validator.html" title="de.rwth.idsg.steve.web.validation.\lEmailCollectionValidator" alt="" coords="187,136,407,177"/>
+<area shape="rect" id="node5" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_id_tag_list_validator.html" title="de.rwth.idsg.steve.web.validation.\lIdTagListValidator" alt="" coords="187,201,407,243"/>
+<area shape="rect" id="node6" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1web_1_1validation_1_1_id_tag_validator.html" title="de.rwth.idsg.steve.web.validation.\lIdTagValidator" alt="" coords="187,267,407,308"/>
 </map>

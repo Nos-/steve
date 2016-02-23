@@ -1,3 +1,5 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_enum_mixin.html" title="de.rwth.idsg.steve.ocpp.ws.custom.\lEnumMixin" alt="" coords="6,5,239,46"/>
+<area shape="rect" id="node1" href="$interfacede_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_ws_session_select_strategy.html" title="de.rwth.idsg.steve.ocpp.ws.custom.\lWsSessionSelectStrategy" alt="" coords="5,39,239,80"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_always_last_strategy.html" title="de.rwth.idsg.steve.ocpp.ws.custom.\lAlwaysLastStrategy" alt="" coords="287,5,520,47"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1custom_1_1_round_robin_strategy.html" title="de.rwth.idsg.steve.ocpp.ws.custom.\lRoundRobinStrategy" alt="" coords="287,71,520,112"/>
 </map>

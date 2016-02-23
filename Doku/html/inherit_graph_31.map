@@ -1,3 +1,7 @@
 <map id="Grafische Darstellung der Klassenhierarchie" name="Grafische Darstellung der Klassenhierarchie">
-<area shape="rect" id="node1" href="$enumde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_error_code.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lErrorCode" alt="" coords="6,5,221,46"/>
+<area shape="rect" id="node1" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_message.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonMessage" alt="" coords="5,39,220,80"/>
+<area shape="rect" id="node2" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_call.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonCall" alt="" coords="268,5,483,47"/>
+<area shape="rect" id="node3" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_response.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonResponse" alt="" coords="268,71,483,112"/>
+<area shape="rect" id="node4" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_error.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonError" alt="" coords="531,37,745,79"/>
+<area shape="rect" id="node5" href="$classde_1_1rwth_1_1idsg_1_1steve_1_1ocpp_1_1ws_1_1data_1_1_ocpp_json_result.html" title="de.rwth.idsg.steve.ocpp.ws.data.\lOcppJsonResult" alt="" coords="531,103,745,144"/>
 </map>
