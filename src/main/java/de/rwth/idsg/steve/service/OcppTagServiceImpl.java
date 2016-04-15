@@ -49,13 +49,13 @@ public class OcppTagServiceImpl implements OcppTagService {
             log.error("The user with idTag '{}' is INVALID (not present in DB).", idTag);
             idTagInfo.setStatus(AuthorizationStatus.INVALID);
         } else {
-            if (record.getInTransaction()) {
-                log.warn("The user with idTag '{}' is ALREADY in another transaction.", idTag);
-                idTagInfo.setStatus(AuthorizationStatus.CONCURRENT_TX);
-
-            } else if (record.getBlocked()) {
+            if (record.getBlocked()) {
                 log.error("The user with idTag '{}' is BLOCKED.", idTag);
                 idTagInfo.setStatus(AuthorizationStatus.BLOCKED);
+
+//            } else if (record.getInTransaction()) {
+//                log.warn("The user with idTag '{}' is ALREADY in another transaction.", idTag);
+//                idTagInfo.setStatus(AuthorizationStatus.CONCURRENT_TX);
 
             } else if (record.getExpiryDate() != null && DateTime.now().isAfter(record.getExpiryDate())) {
                 log.error("The user with idTag '{}' is EXPIRED.", idTag);
@@ -82,13 +82,13 @@ public class OcppTagServiceImpl implements OcppTagService {
             log.error("The user with idTag '{}' is INVALID (not present in DB).", idTag);
             idTagInfo.setStatus(ocpp.cs._2012._06.AuthorizationStatus.INVALID);
         } else {
-            if (record.getInTransaction()) {
-                log.warn("The user with idTag '{}' is ALREADY in another transaction.", idTag);
-                idTagInfo.setStatus(ocpp.cs._2012._06.AuthorizationStatus.CONCURRENT_TX);
-
-            } else if (record.getBlocked()) {
+            if (record.getBlocked()) {
                 log.error("The user with idTag '{}' is BLOCKED.", idTag);
                 idTagInfo.setStatus(ocpp.cs._2012._06.AuthorizationStatus.BLOCKED);
+
+//            } else if (record.getInTransaction()) {
+//                log.warn("The user with idTag '{}' is ALREADY in another transaction.", idTag);
+//                idTagInfo.setStatus(ocpp.cs._2012._06.AuthorizationStatus.CONCURRENT_TX);
 
             } else if (record.getExpiryDate() != null && DateTime.now().isAfter(record.getExpiryDate())) {
                 log.error("The user with idTag '{}' is EXPIRED.", idTag);
@@ -110,7 +110,7 @@ public class OcppTagServiceImpl implements OcppTagService {
     // Private helpers
     // -------------------------------------------------------------------------
 
-    private class AuthorisationDataMapper implements RecordMapper<OcppTagRecord, AuthorisationData> {
+    private static class AuthorisationDataMapper implements RecordMapper<OcppTagRecord, AuthorisationData> {
         private final DateTime nowDt;
         private final DateTime cacheExpiry;
 

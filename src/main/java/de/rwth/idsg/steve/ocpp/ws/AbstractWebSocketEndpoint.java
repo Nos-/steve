@@ -6,6 +6,7 @@ import de.rwth.idsg.steve.ocpp.ws.data.CommunicationContext;
 import de.rwth.idsg.steve.ocpp.ws.data.SessionContext;
 import de.rwth.idsg.steve.ocpp.ws.pipeline.Pipeline;
 import de.rwth.idsg.steve.repository.OcppServerRepository;
+import de.rwth.idsg.steve.service.NotificationService;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,13 +37,15 @@ public abstract class AbstractWebSocketEndpoint implements WebSocketHandler {
     @Autowired private OcppServerRepository ocppServerRepository;
     @Autowired private FutureResponseContextStore futureResponseContextStore;
     @Autowired private WsSessionSelectStrategy wsSessionSelectStrategy;
+    @Autowired private NotificationService notificationService;
 
     public static final String CHARGEBOX_ID_KEY = "CHARGEBOX_ID_KEY";
 
-    protected Pipeline pipeline;
+    private Pipeline pipeline;
     private SessionContextStoreImpl sessionContextStore;
 
-    public void init() {
+    public void init(Pipeline pipeline) {
+        this.pipeline = pipeline;
         sessionContextStore = new SessionContextStoreImpl(wsSessionSelectStrategy);
     }
 
@@ -73,7 +76,7 @@ public abstract class AbstractWebSocketEndpoint implements WebSocketHandler {
         context.setChargeBoxId(chargeBoxId);
         context.setIncomingString(incomingString);
 
-        pipeline.run(context);
+        pipeline.process(context);
     }
 
     private void handlePongMessage(WebSocketSession session) {
@@ -98,6 +101,8 @@ public abstract class AbstractWebSocketEndpoint implements WebSocketHandler {
         String chargeBoxId = getChargeBoxId(session);
         sessionContextStore.add(chargeBoxId, session, pingSchedule);
         futureResponseContextStore.addSession(session);
+
+        notificationService.ocppStationWebSocketConnected(chargeBoxId);
     }
 
     @Override
@@ -107,6 +112,8 @@ public abstract class AbstractWebSocketEndpoint implements WebSocketHandler {
         String chargeBoxId = getChargeBoxId(session);
         sessionContextStore.remove(chargeBoxId, session);
         futureResponseContextStore.removeSession(session);
+
+        notificationService.ocppStationWebSocketDisconnected(chargeBoxId);
     }
 
     @Override

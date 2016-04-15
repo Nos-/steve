@@ -1,5 +1,7 @@
 package de.rwth.idsg.steve.handler;
 
+import de.rwth.idsg.steve.ocpp.RequestType;
+import de.rwth.idsg.steve.ocpp.ResponseType;
 import de.rwth.idsg.steve.ocpp.ws.data.OcppJsonError;
 import de.rwth.idsg.steve.web.dto.task.RequestTask;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +16,10 @@ import java.util.ArrayList;
  * @since 21.03.2015
  */
 @RequiredArgsConstructor
-public abstract class AbstractOcppResponseHandler<T> implements OcppResponseHandler<T> {
-    protected final RequestTask requestTask;
+public abstract class AbstractOcppResponseHandler<S extends RequestType, T extends ResponseType>
+        implements OcppResponseHandler<S, T> {
+
+    protected final RequestTask<S> requestTask;
     protected final String chargeBoxId;
 
     private final Logger log = LoggerFactory.getLogger(getClass());
@@ -23,8 +27,14 @@ public abstract class AbstractOcppResponseHandler<T> implements OcppResponseHand
     // The default initial capacity is 10. We probably won't need that much.
     private ArrayList<OcppCallback<T>> callbackList = new ArrayList<>(2);
 
+    @Override
     public void addCallback(OcppCallback<T> cb) {
         callbackList.add(cb);
+    }
+
+    @Override
+    public S getRequest() {
+        return requestTask.getRequest();
     }
 
     // -------------------------------------------------------------------------

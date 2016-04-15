@@ -3,9 +3,9 @@ package de.rwth.idsg.steve.ocpp.ws.ocpp12;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.rwth.idsg.steve.ocpp.ws.AbstractWebSocketEndpoint;
 import de.rwth.idsg.steve.ocpp.ws.FutureResponseContextStore;
+import de.rwth.idsg.steve.ocpp.ws.pipeline.Deserializer;
 import de.rwth.idsg.steve.ocpp.ws.pipeline.IncomingPipeline;
-import de.rwth.idsg.steve.ocpp.ws.pipeline.Sender;
-import de.rwth.idsg.steve.ocpp.ws.pipeline.Serializer;
+import de.rwth.idsg.steve.ocpp.ws.pipeline.OutgoingPipeline;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,16 +21,14 @@ public class Ocpp12WebSocketEndpoint extends AbstractWebSocketEndpoint {
     @Autowired private Ocpp12CallHandler handler;
     @Autowired private Ocpp12TypeStore typeStore;
 
-    @Autowired private Serializer serializer;
-    @Autowired private Sender sender;
+    @Autowired private OutgoingPipeline outgoingPipeline;
     @Autowired private ObjectMapper mapper;
     @Autowired private FutureResponseContextStore futureResponseContextStore;
 
     @PostConstruct
     public void init() {
-        super.init();
-        pipeline = new IncomingPipeline(mapper, futureResponseContextStore,
-                                        typeStore, handler,
-                                        serializer, sender);
+        Deserializer deserializer = new Deserializer(mapper, futureResponseContextStore, typeStore);
+        IncomingPipeline pipeline = new IncomingPipeline(deserializer, handler, outgoingPipeline);
+        super.init(pipeline);
     }
 }
